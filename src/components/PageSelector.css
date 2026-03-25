@@ -1,0 +1,63 @@
+.page-selector {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.page-selector label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1a1a2e;
+}
+
+.selector-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.selector-row select {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #fafafa;
+  color: #333;
+  outline: none;
+}
+
+.selector-row select:focus {
+  border-color: #1877f2;
+}
+
+.submit-btn {
+  padding: 0.6rem 1.25rem;
+  background: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #1565d8;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.no-pages {
+  color: #e67e22;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem;
+}
