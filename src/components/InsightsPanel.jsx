@@ -1,9 +1,9 @@
 import './InsightsPanel.css';
 
 const METRIC_LABELS = {
-  page_follows: { label: 'Followers', icon: '👥' },
-  page_impressions: { label: 'Impressions', icon: '👁️' },
+  page_views_total: { label: 'Page Views', icon: '👀' },
   page_post_engagements: { label: 'Engagements', icon: '💬' },
+  page_follows: { label: 'Followers', icon: '👥' },
   page_actions_post_reactions_total: { label: 'Reactions', icon: '❤️' },
 };
 

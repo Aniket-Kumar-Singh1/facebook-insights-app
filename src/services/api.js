@@ -11,8 +11,11 @@ export function fetchFromGraph(endpoint, token, params = {}) {
   });
 
   return fetch(url.toString())
-    .then((res) => {
-      if (!res.ok) throw new Error(`Graph API error: ${res.status}`);
+    .then(async (res) => {
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.error?.message || `Graph API error: ${res.status}`);
+      }
       return res.json();
     })
     .then((data) => {
@@ -37,15 +40,15 @@ export function getPageInsights(pageId, pageToken, options = {}) {
   const { since, until } = options;
 
   const metrics = [
-    'page_follows',
-    'page_impressions',
+    'page_views_total',
     'page_post_engagements',
+    'page_follows',
     'page_actions_post_reactions_total',
   ].join(',');
 
   const params = {
     metric: metrics,
-    period: 'total_over_range',
+    period: 'day',
   };
 
   if (since) params.since = since;
